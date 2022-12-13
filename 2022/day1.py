@@ -1,12 +1,4 @@
-def read_input(filename):
-    puzzle_input = []
-    with open(filename) as f:
-        line = f.readline().rstrip()
-        while line:
-            puzzle_input.append(line.strip())
-            line = f.readline()
-    
-    return puzzle_input
+from lib import maxN, read_input
 
 def input_s2i(s):
     s2i_input = []
@@ -30,10 +22,6 @@ def max_elf(elves):
         elf_sums.append(sum(elves[i]))
     
     return elf_sums, cal_max
-
-def maxN(elements, n):
-    return sorted(elements, reverse=True)[:n]
-
 
 if __name__ == '__main__':
     elves = input_s2i(read_input('.\day1_input.txt'))

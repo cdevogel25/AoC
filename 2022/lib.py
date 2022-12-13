@@ -7,3 +7,6 @@ def read_input(filename):
             line = f.readline()
     
     return puzzle_input
+
+def maxN(elements, n):
+    return sorted(elements, reverse=True)[:n]
