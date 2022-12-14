@@ -40,10 +40,12 @@ def overlap(puzzle_input):
 def overlap_range(puzzle_input):
     overlap_sum = 0
     for pair in puzzle_input:
-        if pair[0][0] in range(pair[1][0],pair[1][1] + 1) or pair[0][1] in range(pair[1][0],pair[1][1] + 1):
+        right_range = range(pair[1][0], pair[1][1] + 1)
+        left_range = range(pair[0][0], pair[0][1] + 1)
+        if pair[0][0] in right_range or pair[0][1] in right_range:
             overlap_sum += 1
             continue
-        if pair[1][0] in range(pair[0][0],pair[0][1] + 1) or pair[1][1] in range(pair[0][0],pair[0][1] + 1):
+        if pair[1][0] in left_range or pair[1][1] in left_range:
             overlap_sum += 1
             continue
     
